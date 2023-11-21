@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starwars</title>
+</head>
+<body>
+    <h1>Starwars character Search</h1>
+    <form action="{{ url_for('character') }}" method="post">
+        <label for="character"> Character ID: </label>
+        <input type="text" name="character" required>
+        <button type="submit">Search Character</button>
+    </form>
+
+    <!-- {%if charater %}
+        <h2>{{character["name"]}}</h2>
+        <p>Height:{{character["height"]}}</p>
+        <p>Mass:{{character["mass"]}}</p>
+        <p>Hair color:{{character["hair_color"]}}</p>
+        <p>Eye color:{{character["eye_color"]}}</p>
+    {%endif%} -->
+
+
+    {%if error_message%}
+        <p style="color: red;">{{error_message}}</p>
+    {%endif%}
+    
+</body>
+</html>
